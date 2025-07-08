@@ -11,8 +11,6 @@ public class Program {
         System.out.println("Input second number:");
         int b = scanner.nextInt();
 
-        
-
         int raznica = (a>b)?(a-b):(b-a);
         System.out.println(" Різниця двох чисел = " + raznica);
     }
