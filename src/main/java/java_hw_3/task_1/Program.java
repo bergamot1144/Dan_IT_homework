@@ -15,7 +15,5 @@ public class Program {
         System.out.println("string2 = " + string2);
         System.out.println("string3 = " + string3);
         System.out.println("string4 = " + string4);
-
     }
-
 }

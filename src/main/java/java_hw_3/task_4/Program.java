@@ -24,7 +24,6 @@ public class Program {
         } else {
             System.out.println("Краще б сьогодні була п'ятниця");
         }
-
         scanner.close();
     }
 }
