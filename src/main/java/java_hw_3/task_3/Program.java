@@ -10,6 +10,6 @@ public class Program {
         System.out.println("Input second number:");
         int b = scanner.nextInt();
         int difference = (a > b) ? (a - b) : (b - a);
-        System.out.println(" Різниця двох чисел = " + difference);
+        System.out.println(" Difference of two numbers = " + difference);
     }
 }

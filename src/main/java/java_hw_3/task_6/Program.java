@@ -1,15 +1,17 @@
 package java_hw_3.task_6;
+
 import java.util.Scanner;
+
 public class Program {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
 
-        System.out.print("Яку програму ви хочете завантажити? (IntelliJ IDEA, Git, Java): ");
+        System.out.print("What program do you want to download? (IntelliJ IDEA, Git, Java): ");
         String program = scanner.nextLine();
 
 
-        System.out.print("Яку операційну систему ви використовуєте? (Windows, Linux, MacOS): ");
+        System.out.print("What operating system are you using? (Windows, Linux, MacOS): ");
         String os = scanner.nextLine();
 
 
@@ -81,6 +83,5 @@ public class Program {
             System.out.println("Посилання для завантаження: " + link);
         }
 
-        scanner.close();
     }
 }
