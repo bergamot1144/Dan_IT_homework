@@ -19,7 +19,7 @@ public class Program {
         int input = scanner.nextInt();
         boolean inArray = false;
         for (int i = 0; i < numbers.length; i++) {
-            if (input == i) {
+            if (input == numbers[i]) {
                 inArray = true;
             }
         }
