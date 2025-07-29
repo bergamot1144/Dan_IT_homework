@@ -11,4 +11,6 @@ public class Music extends Media{
     public void play() {
         System.out.printf("Music is being created [%s]:[%s]%n",artist,title);
     }
+
+
 }
