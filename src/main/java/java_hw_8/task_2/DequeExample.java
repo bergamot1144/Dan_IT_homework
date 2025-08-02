@@ -21,5 +21,6 @@ public class DequeExample {
         System.out.println("After push"+deq);
         deq.pop();
         System.out.println("After pop "+deq);
+
     }
 }
