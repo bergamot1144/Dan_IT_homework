@@ -2,7 +2,7 @@ package java_hw_6.task_2_1;
 
 public class Circle extends Figure {
 
-    double radius;
+    private double radius;
     final double PI = 3.14;
 
     @Override
