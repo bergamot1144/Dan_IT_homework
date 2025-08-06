@@ -2,13 +2,13 @@ package java_hw_6.task_2_1;
 
 public class Square extends Figure {
 
-    private double side;   // скрыли поле
+    private double side;
 
     public Square(double side) {
         this.side = side;
     }
 
-    public double getSide() {   // «на всякий случай»
+    public double getSide() {
         return side;
     }
 
