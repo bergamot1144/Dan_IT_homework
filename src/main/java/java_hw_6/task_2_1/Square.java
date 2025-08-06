@@ -2,9 +2,17 @@ package java_hw_6.task_2_1;
 
 public class Square extends Figure {
 
-    double side;
+    private double side;   // скрыли поле
 
     public Square(double side) {
+        this.side = side;
+    }
+
+    public double getSide() {   // «на всякий случай»
+        return side;
+    }
+
+    public void setSide(double side) {
         this.side = side;
     }
 
@@ -20,10 +28,6 @@ public class Square extends Figure {
 
     @Override
     public String toString() {
-        return "Square{" +
-                "side=" + side +
-                '}';
+        return "Square{ side=" + side + " }";
     }
-
-
 }
