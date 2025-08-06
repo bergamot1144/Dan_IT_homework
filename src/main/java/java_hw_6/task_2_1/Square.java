@@ -4,6 +4,10 @@ public class Square extends Figure {
 
     double side;
 
+    public Square(double side) {
+        this.side = side;
+    }
+
     @Override
     public double getArea() {
         return side * side;
@@ -21,7 +25,5 @@ public class Square extends Figure {
                 '}';
     }
 
-    public Square(double side) {
-        this.side = side;
-    }
+
 }
