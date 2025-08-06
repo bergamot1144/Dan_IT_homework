@@ -23,11 +23,6 @@ public class Student {
         return name;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" + "id=" + id + ", name='" + name + '\'' + ", age=" + age + ", gpa=" + gpa + '}';
-    }
-
     public static List<Student> addStudent(List<Student> students, Student student) {
         students.add(student);
         return students;
@@ -47,6 +42,7 @@ public class Student {
         for (Student s : students) {
             if (s.getName().equalsIgnoreCase(name)) {
                 System.out.println("Name " + name + " found successfully.");
+                return s;
             }
         }
         return null;
@@ -60,5 +56,10 @@ public class Student {
                 System.out.println(s);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" + "id=" + id + ", name='" + name + '\'' + ", age=" + age + ", gpa=" + gpa + '}';
     }
 }
