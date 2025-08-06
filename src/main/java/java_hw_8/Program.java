@@ -67,6 +67,10 @@ public class Program {
                         System.out.println("Found: " + found);
                     } else {
                         System.out.println("No person found with that surname.");
+                        System.out.println("List of all added persons:");
+                        for (String surname : map.keySet()) {
+                            System.out.println(map.get(surname));
+                        }
                     }
                     break;
 
