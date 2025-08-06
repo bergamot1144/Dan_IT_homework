@@ -8,16 +8,16 @@ public class Program {
         double circleArea = circle.getArea();
         System.out.println("Area of the circle " + circleArea);
         double circlePerimeter = circle.getPerimeter();
-        System.out.println("Perimeter of the circle "+circlePerimeter);
+        System.out.println("Perimeter of the circle " + circlePerimeter);
         Figure square = new Square(5.0);
         double squareArea = square.getArea();
-        System.out.println("Area of the square "+squareArea);
+        System.out.println("Area of the square " + squareArea);
         double squarePerimeter = square.getPerimeter();
-        System.out.println("Perimeter of the square "+squarePerimeter);
+        System.out.println("Perimeter of the square " + squarePerimeter);
 
         Figure triangle = new Triangle(3.0, 4.0, 5.0);
-        double triangleArea =triangle.getArea();
-        System.out.println("Area of the triangle "+triangleArea);
+        double triangleArea = triangle.getArea();
+        System.out.println("Area of the triangle " + triangleArea);
         double trianglePerimeter = triangle.getPerimeter();
         System.out.println("Perimeter of the triangle " + trianglePerimeter);
 

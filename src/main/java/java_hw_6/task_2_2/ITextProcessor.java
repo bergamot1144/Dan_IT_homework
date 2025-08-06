@@ -4,6 +4,6 @@ public interface ITextProcessor {
     public String process(String text);
 
     public default String removeDigits(String text) {
-        return text.replace(".","");
-    };
+        return text.replace(".", "");
+    }
 }
