@@ -15,7 +15,7 @@ public class Program {
         System.out.println("All students are loaded.");
         System.out.println("\nAll students:");
         Student.printAllStudents(students);
-        Student eugen = Student.findStudentByName(students, "Eugen");
+        Student.findStudentByName(students, "Eugen");
         Student.removeStudentById(students, 2);
         Student.removeStudentById(students, 3);
         System.out.println("\nAll students:");
