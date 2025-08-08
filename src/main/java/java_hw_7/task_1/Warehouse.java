@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Warehouse<T> {
 
-    List<T> elements = new ArrayList<>();
+    private List<T> elements = new ArrayList<>();
 
     public void addItem(T item) {
         System.out.printf("%s added.", item);
@@ -13,28 +13,20 @@ public class Warehouse<T> {
     }
 
     public int getItemCount() {
-
         return elements.size();
     }
 
     public List<T> retrieveAll() {
-//        for (T e : elements) {
-//            System.out.println(e);
-//        }
         List<T> duplicate = new ArrayList<>(elements);
-
         elements.clear();
-
         return duplicate;
     }
 
     public List<T> viewItems() {
-
         return new ArrayList<>(elements);
     }
 
     public boolean isEmpty() {
-
         return elements.isEmpty();
     }
 

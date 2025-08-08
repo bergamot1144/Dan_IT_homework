@@ -11,7 +11,7 @@ public class Program {
         Vehicle mercedes = new Vehicle("Mercedes CLS 350", 250);
         Vehicle opel = new Vehicle("Opel Astra", 170);
         Vehicle mazda = new Vehicle("Mazda CX30", 240);
-        List<Vehicle>cars = new ArrayList<>();
+        List<Vehicle> cars = new ArrayList<>();
         cars.add(audi);
         cars.add(bmw);
         cars.add(mazda);
@@ -22,10 +22,5 @@ public class Program {
         cars.sort(Comparator.comparing(Vehicle::getSpeed));
         System.out.println("List after .sort: ");
         cars.forEach(System.out::println);
-
-
-
-
-
     }
 }
