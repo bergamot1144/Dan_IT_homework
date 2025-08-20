@@ -1,19 +1,15 @@
 package java_hw_8;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Person {
-    String name;
-    String surName;
-    int age;
 
+    private String name;
+    private String surName;
+    private int age;
 
-    public Person(String name, int age)
-    {
-        this.name=name;
-//        this.surName=surName;
-        this.age=age;
+    public Person(String name, String surName, int age) {
+        this.name = name;
+        this.surName = surName;
+        this.age = age;
     }
 
     public String getName() {
@@ -37,13 +33,18 @@ public class Person {
     }
 
     public void setAge(int age) {
+        if (age < 0) {
+            throw new IllegalArgumentException("Age must be non-negative");
+        }
         this.age = age;
     }
 
     @Override
     public String toString() {
-        return "Person{" + "name='" + name + '\'' + ", surName='" + surName + '\'' + ", age=" + age + '}';
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", surName='" + surName + '\'' +
+                ", age=" + age +
+                '}';
     }
-
-
 }

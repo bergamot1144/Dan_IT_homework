@@ -3,20 +3,20 @@ package java_hw_6.task_1_2;
 public class Program {
     public static void main(String[] args) {
         Car audi = new Car();
-        Truck mack_Titan = new Truck();
+        Truck mackTitan = new Truck();
 
-        audi.speed=280;
-        audi.passengerCapacity=2;
-        audi.name="Audi RS 6";
+        audi.setName("Audi RS 6");
+        audi.setSpeed(280);
+        audi.setPassengerCapacity(2);
 
-        mack_Titan.speed = 80;
-        mack_Titan.loadCapacity=120;
-        mack_Titan.name = "Mack Titan";
+        mackTitan.setName("Mack Titan");
+        mackTitan.setSpeed(80);
+        mackTitan.setLoadCapacity(120);
 
         audi.move();
-        mack_Titan.move();
+        mackTitan.move();
 
         audi.stop();
-        mack_Titan.stop();
+        mackTitan.stop();
     }
 }

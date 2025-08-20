@@ -1,28 +1,46 @@
 package java_hw_9.task_4;
 
 public class Car {
-    String model;
-    double price;
-    int maxSpeed;
-    int countOfWheels;
+    private String model;
+    private double price;
+    private int maxSpeed;
+    private int countOfWheels;
+
+    private Car(Builder builder) {
+        this.model = builder.model;
+        this.price = builder.price;
+        this.maxSpeed = builder.maxSpeed;
+        this.countOfWheels = builder.countOfWheels;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public int getCountOfWheels() {
+        return countOfWheels;
+    }
+
     @Override
     public String toString() {
-        return "Builder{" +
+        return "Car{" +
                 "model='" + model + '\'' +
                 ", price=" + price +
                 ", maxSpeed=" + maxSpeed +
                 ", countOfWheels=" + countOfWheels +
                 '}';
     }
-    private Car(Builder builder) {
-        this.model = builder.model;
-        this.price = builder.price;
-        this.maxSpeed = builder.maxSpeed;
-        this.countOfWheels = builder.countOfWheels;
-
-    }
 
     public static class Builder {
+
         private String model;
         private double price;
         private int maxSpeed;
@@ -53,6 +71,14 @@ public class Car {
             return new Car(this);
         }
 
-
+        @Override
+        public String toString() {
+            return "Builder{" +
+                    "model='" + model + '\'' +
+                    ", price=" + price +
+                    ", maxSpeed=" + maxSpeed +
+                    ", countOfWheels=" + countOfWheels +
+                    '}';
+        }
     }
 }

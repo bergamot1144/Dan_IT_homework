@@ -4,9 +4,7 @@ public class Media {
     String title;
     int duration;
 
-    public void play()
-    {
+    public void play() {
         System.out.println("Multimedia creation...");
     }
-
 }
