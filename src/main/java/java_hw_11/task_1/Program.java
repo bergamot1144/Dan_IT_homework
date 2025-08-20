@@ -8,8 +8,8 @@ public class Program {
     public static void main(String[] args) {
         CanBeClosed browser = new MyBrowser();
         CanBeClosed file = new MyFile();
-        List<CanBeClosed>res = new ArrayList<>(Arrays.asList(browser, file));
-        SessionCloser closer = list ->list.forEach(CanBeClosed::close);
+        List<CanBeClosed> res = new ArrayList<>(Arrays.asList(browser, file));
+        SessionCloser closer = list -> list.forEach(CanBeClosed::close);
         closer.closeSession(res);
     }
 }
