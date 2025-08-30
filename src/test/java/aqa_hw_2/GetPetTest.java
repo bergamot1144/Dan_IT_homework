@@ -9,8 +9,8 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.responseSpecification;
 
 public class GetPetTest {
-    @Test
 
+    @Test
     public void verifyPetCanBeObtained() {
         int entityIdToFind = 1124;
         Response response = given().get("https://petstore.swagger.io/v2/pet/" + entityIdToFind);

@@ -9,6 +9,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 
 public class PutPetTests {
+
     @Test
     public void verifyPetCanBeModified() {
 //        int id = 1124;

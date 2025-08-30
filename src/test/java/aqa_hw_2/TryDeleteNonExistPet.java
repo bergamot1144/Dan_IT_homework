@@ -8,12 +8,11 @@ import static io.restassured.RestAssured.given;
 
 public class TryDeleteNonExistPet {
     @Test
-    public void tryDeletePet()
-    {
+    public void tryDeletePet() {
         int fakeId = 9654645;
 
         Response response = given().delete("https://petstore.swagger.io/v2/pet/" + fakeId);
-        Assert.assertEquals(404,response.statusCode());
+        Assert.assertEquals(404, response.statusCode());
 
     }
 }
