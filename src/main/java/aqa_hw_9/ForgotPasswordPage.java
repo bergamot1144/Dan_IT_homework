@@ -1,42 +1,29 @@
-package aqa_hw_8;
+package aqa_hw_9;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import com.codeborne.selenide.SelenideElement;
 
-import java.time.Duration;
+import static com.codeborne.selenide.Selenide.$;
 
 public class ForgotPasswordPage {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
 
-    private final By loginInput = By.cssSelector("input[type='text'], input[type='email']");
-    private final By sendButton = By.cssSelector("button.reminder-form__button");
-    private final By errorBlock = By.cssSelector("div.error.m_b-5");
-
-    public ForgotPasswordPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
+    private final SelenideElement loginInput = $("input[type='text'], input[type='email']");
+    private final SelenideElement sendButton = $("button.reminder-form__button");
+    private final SelenideElement errorBlock = $("div.error.m_b-5");
 
     public void typeLogin(String value) {
-        WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(loginInput));
-        input.clear();
-        input.sendKeys(value);
+        loginInput.clear();
+        loginInput.setValue(value);
     }
 
     public void clickSendButton() {
-        WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(sendButton));
-        btn.click();
+        sendButton.click();
     }
 
     public boolean isErrorVisible() {
-        return !driver.findElements(errorBlock).isEmpty();
+        return errorBlock.exists() && errorBlock.isDisplayed();
     }
 
     public String getErrorText() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(errorBlock)).getText().trim();
+        return errorBlock.getText().trim();
     }
 }

@@ -1,23 +1,23 @@
-package aqa_hw_8;
+package aqa_hw_9;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selectors.byXpath;
 
 public class DispositionPage {
-    private final WebDriver driver;
 
-    private final By lawParagraph = By.xpath("//p[@class='text-center' and contains(.,'Згідно Закону України «Про захист персональних даних»')]");
-    private final By lawLink = By.cssSelector("p.text-center a[href*='2297-17#Text']");
+    private final SelenideElement lawParagraph =
+            $(byXpath("//p[@class='text-center' and contains(.,'Згідно Закону України «Про захист персональних даних»')]"));
 
-    public DispositionPage(WebDriver driver) {
-        this.driver = driver;
-    }
+    private final SelenideElement lawLink =
+            $("p.text-center a[href*='2297-17#Text']");
 
     public boolean isLawParagraphVisible() {
-        return !driver.findElements(lawParagraph).isEmpty();
+        return lawParagraph.exists() && lawParagraph.isDisplayed();
     }
 
     public boolean isLawLinkPresent() {
-        return !driver.findElements(lawLink).isEmpty();
+        return lawLink.exists();
     }
 }

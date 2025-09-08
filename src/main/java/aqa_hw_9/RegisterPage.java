@@ -1,29 +1,19 @@
-package aqa_hw_8;
+package aqa_hw_9;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class RegisterPage {
 
-    private final WebDriver driver;
-
-    private final By nameField = By.id("name");
-
-    public RegisterPage(WebDriver driver) {
-        this.driver = driver;
-    }
+    private final SelenideElement nameField = $("#name");
 
     public void typeName(String name) {
-        WebElement input = driver.findElement(nameField);
-        input.clear();
-        input.sendKeys(name);
+        nameField.setValue(name);
     }
-
     public String getNameValue() {
-        return driver.findElement(nameField).getAttribute("value");
+        return nameField.getValue();
     }
-
     public int getNameLength() {
         return getNameValue().length();
     }

@@ -1,61 +1,26 @@
-package aqa_hw_8;
+package aqa_hw_9;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.switchTo;
 
 public class LoginPage {
-    private WebDriver driver;
 
-    private final By loginField = By.cssSelector("[inputmode='email']");
-    private final By passwordField = By.cssSelector("[type='password']");
-    private final By dispositionLink = By.cssSelector("a[href='/ua/page/disposition/']");
-    private final By loginButton = By.cssSelector("[type='submit']");
-    private final By forgetPasswordLink = By.cssSelector("a[href='/ua/reminder/']");
-    private final By userAgreementLink = By.cssSelector("a[href='/ua/page/user_agreement/'], a[href='/page/user_agreement/']");
 
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    public LoginPage enterLogin(String login) {
-        driver.findElement(loginField).sendKeys(login);
-        return this;
-    }
-
-    public LoginPage enterPassword(String password) {
-        driver.findElement(passwordField).sendKeys(password);
-        return this;
-    }
+    private final SelenideElement loginField = $("[inputmode='email']");
+    private final SelenideElement passwordField = $("[type='password']");
+    private final SelenideElement dispositionLink = $("a[href='/ua/page/disposition/']");
+    private final SelenideElement loginButton = $("[type='submit']");
+    private final SelenideElement forgetPasswordLink = $("a[href='/ua/reminder/']");
+    private final SelenideElement userAgreementLink = $("a[href='/ua/page/user_agreement/'], a[href='/page/user_agreement/']");
+    private final SelenideElement registerLink = $("a[href='/ua/register/']");
 
     public void clickUserAgreement() {
-        driver.findElement(userAgreementLink).click();
-    }
-
-    public void clickDisposition() {
-        driver.findElement(dispositionLink).click();
-    }
-
-    public void clickLoginButton() {
-        driver.findElement(loginButton).click();
+        userAgreementLink.click();
     }
 
     public void clickForgetPassword() {
-        driver.findElement(forgetPasswordLink).click();
+        forgetPasswordLink.click();
     }
-
-    public void clickRegisterLink() {
-        driver.findElement(By.cssSelector("a[href='/ua/register/']")).click();
-    }
-
-
-    public void switchToNewTab() {
-        String originalWindow = driver.getWindowHandle();
-        for (String handle : driver.getWindowHandles()) {
-            if (!handle.equals(originalWindow)) {
-                driver.switchTo().window(handle);
-                break;
-            }
-        }
-    }
-
 }

@@ -1,42 +1,23 @@
-package aqa_hw_8;
+package aqa_hw_9;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.codeborne.selenide.SelenideElement;
 
-import static java.lang.Thread.sleep;
+import static com.codeborne.selenide.Selenide.$;
 
 public class HomePage {
-    private WebDriver driver;
+    private final SelenideElement searchField = $("[type='text']");
+    private final SelenideElement searchButton = $("button.search__btn");
+    private final SelenideElement userIcon = $("a.user-button.login-button.login-button--visible.header__user-icon");
+    private final SelenideElement registerLink = $("a[href='/ua/register/']");
 
-    private final By userIcon = By.cssSelector("a.user-button.login-button.login-button--visible.header__user-icon");
-
-    private final By registerLink = By.cssSelector("a[href='/ua/register/']");
-
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    public void enterSearchText(String inputText) {
-        WebElement searchField = driver.findElement(By.cssSelector("[type='text']"));
-        searchField.sendKeys(inputText);
-    }
-    public void clickOnSearchButton(){
-        WebElement searchButton = driver.findElement(By.cssSelector("button.search__btn"));
-        searchButton.click();
-    }
     public void clickUserIcon() {
-        driver.findElement(userIcon).click();
+        userIcon.click();
     }
-    public void goToRegisterPage() throws InterruptedException {
+    public void goToRegisterPage() {
         clickUserIcon();
-        sleep(4000);
-        driver.findElement(registerLink).click();
+        registerLink.click();
     }
-    public void goToLoginPage()
-    {
+    public void goToLoginPage() {
         clickUserIcon();
     }
-
-
 }

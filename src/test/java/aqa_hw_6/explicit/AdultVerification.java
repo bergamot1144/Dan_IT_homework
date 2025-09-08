@@ -44,6 +44,8 @@ public class AdultVerification {
             beerCider.click();
 
             WebElement adultModal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span.adult__info")));
+
+
             String actualText = adultModal.getText().trim();
 
             Assert.assertEquals("Текст не совпал", expectedText, actualText);

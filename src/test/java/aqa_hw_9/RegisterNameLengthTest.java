@@ -1,10 +1,17 @@
 package aqa_hw_9;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RegisterNameLengthTest extends BaseTest {
     @Test
+    @Story("User enters invalid email")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Проверка, что в строке имя можно только 30 символов ввести")
     public void verifyNameFieldMaxLength() {
         HomePage homePage = new HomePage();
         homePage.goToRegisterPage();

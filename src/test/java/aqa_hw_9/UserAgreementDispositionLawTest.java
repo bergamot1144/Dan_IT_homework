@@ -1,5 +1,9 @@
 package aqa_hw_9;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,6 +13,9 @@ import static com.codeborne.selenide.Selenide.switchTo;
 public class UserAgreementDispositionLawTest extends BaseTest {
 
     @Test
+    @Story("User enters invalid email")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Проверка, что есть Згідно Закону України «Про захист персональних даних» во вкладке после угоды корыстувача ")
     public void verifyUserAgreementAndDispositionText() {
 
         HomePage homePage = new HomePage();
