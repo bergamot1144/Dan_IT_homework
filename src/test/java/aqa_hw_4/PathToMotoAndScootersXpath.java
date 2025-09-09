@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static java.lang.Thread.sleep;
 
-public class pathToMotoAndScootersXpath {
+public class PathToMotoAndScootersXpath {
     @Test
     public void LetsGo()
     {
@@ -17,21 +17,21 @@ public class pathToMotoAndScootersXpath {
         try {
 
             driver.get("https://hotline.ua/");
-            WebElement autoAndMotoCategory = driver.findElement(By.xpath("//a[@class='categories-section__link link--black' and normalize-space()='Авто і Мото']\n"));
+            WebElement autoAndMotoCategory = driver.findElement(By.xpath("//a[@class='categories-section__link link--black' and normalize-space()='Авто і Мото']"));
             autoAndMotoCategory.click();
             sleep(2000);
-            WebElement motoCategory = driver.findElement(By.xpath("//ul[@class='category-navigation content']//a[@href='/ua/auto/#moto']\n"));
+            WebElement motoCategory = driver.findElement(By.xpath("//ul[@class='category-navigation content']//a[@href='/ua/auto/#moto']"));
             motoCategory.click();
             sleep(2000);
-            WebElement candles = driver.findElement(By.xpath("//div[@class='section-navigation__link-text' and normalize-space()='Свічки запалювання']\n"));
+            WebElement candles = driver.findElement(By.xpath("//div[@class='section-navigation__link-text' and normalize-space()='Свічки запалювання']"));
             sleep(2000);
             candles.click();
             sleep(3000);
-            WebElement title = driver.findElement(By.xpath("//h1[@class='catalog-title__main' and normalize-space()='Свічки запалення']\n"));
+            WebElement title = driver.findElement(By.xpath("//h1[@class='catalog-title__main' and normalize-space()='Свічки запалення']"));
             sleep(4000);
             String actualText = title.getText().trim();
-            String expectedText  = title.getText().trim();
-            Assert.assertEquals("Заголовок не совпадает!", expectedText, actualText);
+            String expectedText  = "Свічки запалення";
+            Assert.assertEquals("The title does not match!", expectedText, actualText);
         } catch (AssertionError error) {
             error.printStackTrace();
         } catch (InterruptedException e) {
