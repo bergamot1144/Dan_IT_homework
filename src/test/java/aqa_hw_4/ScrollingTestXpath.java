@@ -32,6 +32,5 @@ public class ScrollingTestXpath {
         } finally {
             driver.quit();
         }
-
     }
 }

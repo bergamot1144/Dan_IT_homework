@@ -12,9 +12,7 @@ import static java.lang.Thread.sleep;
 
 public class SearchTestCss {
     @Test
-
-    public void tryToSearchIphone()
-    {
+    public void tryToSearchIphone() {
         String wordToFind = "iPhone";
         WebDriver driver = new FirefoxDriver();
         try {
@@ -22,15 +20,14 @@ public class SearchTestCss {
             driver.get("https://hotline.ua/");
             WebElement searchField = driver.findElement(By.cssSelector("input[type='text']"));
             searchField.sendKeys(wordToFind, Keys.ENTER);
-            sleep(3000);
+            sleep(7000);
             WebElement searchTitle = driver.findElement(By.cssSelector("div.search__title"));
             sleep(3000);
             String actualTitleText = searchTitle.getText();
             Assert.assertTrue(actualTitleText.contains(wordToFind));
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             driver.quit();
         }
     }
