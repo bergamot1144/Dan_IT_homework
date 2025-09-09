@@ -19,13 +19,9 @@ public class ChangeLangTest {
             searchRuButton.click();
             WebElement textBlock = driver.findElement(By.cssSelector(".search-section__text"));
             String actualText = textBlock.getText().trim();
-            String ruText = "2 млн товаров в 2028 магазинах - найди, сравни, выбери свой!";
-            Assert.assertEquals("Текст после переключения на RU не совпал с ожидаемым", ruText,actualText);
-        } catch (AssertionError error)
-        {
-            error.printStackTrace();
-        }
-        finally {
+            Assert.assertTrue("Text does not contain text what I need'",
+                    actualText.contains("найди, сравни, выбери свой!"));
+        } finally {
             driver.quit();
         }
     }
