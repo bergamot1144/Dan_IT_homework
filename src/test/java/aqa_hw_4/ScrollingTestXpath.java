@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static java.lang.Thread.sleep;
 
-public class scrollingTestXpath {
+public class ScrollingTestXpath {
     @Test
     public void scrolling()
     {
