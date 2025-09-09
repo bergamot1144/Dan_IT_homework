@@ -22,7 +22,7 @@ public class TranslaterTestXpath {
             WebElement textBlock = driver.findElement(
                     By.xpath("//div[@class='search-section__text']"));
             String actualText = textBlock.getText().trim();
-            String expectedText = "2 млн товаров";
+            String expectedText = "выбери свой";
             Assert.assertTrue(actualText.contains(expectedText));
         } catch (Exception e) {
             e.printStackTrace();
