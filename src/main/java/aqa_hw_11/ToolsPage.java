@@ -43,13 +43,15 @@ public class ToolsPage {
                 .shouldHave(texts("react", "general", "excelFile"));
 
     }
+
     //for 2nd test
-    public void interactionsClick(){
+    public void interactionsClick() {
         SelenideElement card = $$("div.card.mt-4.top-card").findBy(text("Interactions"))
                 .scrollTo().shouldBe(visible);
 
         card.click(ClickOptions.usingJavaScript());
     }
+
     public void droppableUnit() {
         $$("li.btn.btn-light")
                 .findBy(text("Droppable"))
@@ -57,7 +59,8 @@ public class ToolsPage {
                 .shouldBe(visible)
                 .click();
     }
-    public void moveBlockToTarget(){
+
+    public void moveBlockToTarget() {
         SelenideElement block = $("#draggable");
         SelenideElement target = $("#droppable");
         actions()
@@ -65,8 +68,6 @@ public class ToolsPage {
                 .perform();
         $("#droppable").shouldHave(text("Dropped!"));
     }
-
-
 
 
 }

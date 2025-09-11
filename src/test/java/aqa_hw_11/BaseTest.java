@@ -23,6 +23,7 @@ public class BaseTest {
         Selenide.open("https://demoqa.com/");
 
     }
+
     @AfterMethod
     public void publishTestResultsToTestRail(ITestResult testResult) {
         if (testResult.getStatus() == ITestResult.SUCCESS) {
