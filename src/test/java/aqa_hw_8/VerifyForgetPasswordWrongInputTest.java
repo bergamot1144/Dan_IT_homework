@@ -18,7 +18,7 @@ public class VerifyForgetPasswordWrongInputTest extends BaseTest {
         ForgotPasswordPage fp = new ForgotPasswordPage(getDriver());
         fp.typeLogin("qwerty!@#not-an-email");
         fp.clickSendButton();
-        String expected = "Введіть коректний email або номер мобільного телефону";
+        String expected = "Введіть email або номер мобільного телефону";
         Assert.assertTrue(fp.isErrorVisible(), "Блок ошибки не появился");
         Assert.assertEquals(fp.getErrorText(), expected, "Текст ошибки не совпал");
     }
