@@ -5,7 +5,6 @@ import org.testng.annotations.DataProvider;
 public class ProvideData {
 
     @DataProvider
-
     public Object[][] getSearchData() {
         return new Object[][]{
                 {"Iphone"},

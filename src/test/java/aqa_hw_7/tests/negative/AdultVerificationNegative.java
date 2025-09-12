@@ -47,7 +47,7 @@ public class AdultVerificationNegative {
         Assert.assertEquals(
                 actualText,
                 EXPECTED_MODAL_TEXT,
-                "Текст модального окна 18+ не совпал с ожидаемым"
+                "The text of the 18+ modal window did not match the expected one"
         );
     }
     @Test
