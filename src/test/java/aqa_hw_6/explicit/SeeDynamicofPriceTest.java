@@ -11,36 +11,45 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static java.lang.Thread.sleep;
-
 public class SeeDynamicofPriceTest {
 
     @Test
-    public void checkPriceDynamic() throws InterruptedException {
-        String TV = "Samsung QE65S90D";
+    public void checkPriceDynamic() {
+        String elementToSearch = "Samsung QE65S90D";
         WebDriver driver = new FirefoxDriver();
         try {
             driver.get("https://hotline.ua/");
+
             WebElement searchField = driver.findElement(By.cssSelector("input"));
             searchField.click();
-            searchField.sendKeys(TV);
+            searchField.sendKeys(elementToSearch);
+
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement sliderTVcontainer = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(
-                            By.xpath("//li[contains(@class,'autosuggest__results-item')][contains(normalize-space(),'OLED телевізор Samsung QE65S90D')]")
-                    )
+
+            WebElement suggestion = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.cssSelector("li.autosuggest__results-item")
+            ));
+
+            Assert.assertTrue(
+                    "В подсказках не найдено нужное название",
+                    suggestion.getText().contains(elementToSearch)
             );
-            sliderTVcontainer.click();
-            WebElement priceDynamics = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.mini-price-dynamics__wrapper")));
+
+            suggestion.click();
+
+            WebElement priceDynamics = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.cssSelector("div.mini-price-dynamics__wrapper")
+            ));
             priceDynamics.click();
-            WebElement expectedElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.modal__title")));
+
+            WebElement expectedElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.cssSelector("div.modal__title")
+            ));
             String actualText = expectedElement.getText().trim();
             Assert.assertEquals("Динаміка цін", actualText);
-        } catch (AssertionError error) {
-            error.printStackTrace();
+
         } finally {
             driver.quit();
         }
-
     }
 }

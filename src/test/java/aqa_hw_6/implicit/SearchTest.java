@@ -12,9 +12,7 @@ import java.time.Duration;
 
 public class SearchTest {
     @Test
-
-    public void tryToSearchIphone()
-    {
+    public void tryToSearchIphone() {
         String wordToFind = "iPhone";
         WebDriver driver = new FirefoxDriver();
         try {
@@ -32,8 +30,7 @@ public class SearchTest {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             driver.quit();
         }
     }
