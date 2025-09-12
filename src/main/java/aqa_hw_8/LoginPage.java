@@ -17,36 +17,13 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public LoginPage enterLogin(String login) {
-        driver.findElement(loginField).sendKeys(login);
-        return this;
-    }
-
-    public LoginPage enterPassword(String password) {
-        driver.findElement(passwordField).sendKeys(password);
-        return this;
-    }
-
     public void clickUserAgreement() {
         driver.findElement(userAgreementLink).click();
-    }
-
-    public void clickDisposition() {
-        driver.findElement(dispositionLink).click();
-    }
-
-    public void clickLoginButton() {
-        driver.findElement(loginButton).click();
     }
 
     public void clickForgetPassword() {
         driver.findElement(forgetPasswordLink).click();
     }
-
-    public void clickRegisterLink() {
-        driver.findElement(By.cssSelector("a[href='/ua/register/']")).click();
-    }
-
 
     public void switchToNewTab() {
         String originalWindow = driver.getWindowHandle();
