@@ -6,16 +6,16 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Issue;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AddToBasketTest extends BaseTest{
+public class AddToBasketTest extends BaseTest {
     @Test
     @Description("Еhe test checks the functionality of adding a product to the cart ")
     @Epic("Navigation")
     @Feature("Clicking buy button on product page")
     @Issue("JIRA-1112")
-    public void addBookToBasket()
-    {
+    public void addBookToBasket() {
         String title = "Гаррі Поттер і таємна кімната";
         HomePage homePage = new HomePage();
         homePage.search(title);
@@ -28,6 +28,6 @@ public class AddToBasketTest extends BaseTest{
         basketPage.clickCheckout();
         OrderPage orderPage = new OrderPage();
         orderPage.shouldSeeCheckoutHeader();
-
+        orderPage.shouldSeeOrderDescription();
     }
 }

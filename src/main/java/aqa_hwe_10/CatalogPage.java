@@ -20,6 +20,7 @@ public class CatalogPage {
             $$("li.catalog-grid__item .catalogCard-price, " +
                     "li.catalog-grid__item .catalogCard-price.__light, " +
                     "li.catalog-grid__item .catalogCard-priceBox .catalogCard-price");
+
     public void setPriceRange(Integer min, Integer max) {
         if (min != null) {
             priceMinInput.shouldBe(visible).clear();
@@ -33,16 +34,15 @@ public class CatalogPage {
             sleep(1000);
             priceMaxInput.setValue(String.valueOf(max));
         }
-        if(max==null)
-        {
+        if (max == null) {
             priceMaxInput.shouldBe(visible).clear();
         }
         priceOkButton.shouldBe(visible, enabled).click();
-        
         cardPrices.first().shouldBe(visible);
     }
+
     public void shouldAllPricesBeAtMost(int limit) {
-        
+
         cardPrices.first().shouldBe(visible);
 
         for (SelenideElement priceEl : cardPrices) {
@@ -60,15 +60,8 @@ public class CatalogPage {
         return firstNumber.isEmpty() ? 0 : Integer.parseInt(firstNumber);
     }
 
-    public SelenideElement cardByTitle(String title)
-    {
+    public SelenideElement cardByTitle(String title) {
         return cards.findBy(text(title))
                 .shouldBe(visible);
     }
-
-    public void clickTitle(SelenideElement link) {
-        link.shouldBe(visible, enabled).click();
-    }
-
-
 }

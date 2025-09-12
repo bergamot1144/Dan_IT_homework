@@ -11,10 +11,6 @@ import static com.codeborne.selenide.Selenide.sleep;
 public class HomePage {
     private final SelenideElement searchButton = $("button[type='submit'].search__button");
     private final SelenideElement searchField = $("input[name='q']");
-    private final SelenideElement basketButton = $("a.basket__link.j-basket-link");
-    private final SelenideElement mainLogo = $("div.header__logo");
-    private final SelenideElement mobileVersionButton = $("div.footer__mobile-version");
-    private final SelenideElement burgerMenuButton = $("svg.icon--menu");
 
     public void search(String text)
     {
@@ -32,13 +28,9 @@ public class HomePage {
                 .shouldBe(visible, enabled)
                 .click();
     }
-    public void aboutUs(){
+    public void aboutUsFooterButton(){
         $("a.footer__link[href='/pro-nas/']")
                 .shouldBe(visible, enabled)
                 .click();
     }
-    public void myBasket(){
-        basketButton.click();
-    }
-
 }

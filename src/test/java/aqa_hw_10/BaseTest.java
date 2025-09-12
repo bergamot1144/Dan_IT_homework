@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Configuration.browser;
 public class BaseTest {
     @BeforeMethod
     public void initDriver() {
-
         browser = "firefox";
         Selenide.open("https://booklion.lviv.ua/");
     }
+
     @AfterMethod
     public void quitDriver() {
         Selenide.closeWebDriver();

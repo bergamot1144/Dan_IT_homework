@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.visible;
+
 public class AboutUsNavigationTest extends BaseTest {
 
     @Test
@@ -20,17 +21,14 @@ public class AboutUsNavigationTest extends BaseTest {
     @Feature("Clicking <ul> block")
     @Issue("JIRA-1111")
     public void navigationAboutUs() {
-        new HomePage().aboutUs();
+        new HomePage().aboutUsFooterButton();
         AboutUsPage about = new AboutUsPage();
         List<String> labels = about.getMenuItemTexts();
         for (String label : labels) {
             SelenideElement item = about.findMenuItemByText(label)
                     .scrollTo()
                     .shouldBe(visible);
-            String href = item.getAttribute("href");
-            if (href != null && !href.isEmpty()) {
-                item.click();
-            }
+            item.click();
             about.headerShouldBe(label);
         }
     }

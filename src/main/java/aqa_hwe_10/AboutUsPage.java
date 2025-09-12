@@ -20,6 +20,7 @@ public class AboutUsPage {
     public SelenideElement findMenuItemByText(String text) {
         return menuItems.findBy(exactText(text)).shouldBe(visible);
     }
+
     public void headerShouldBe(String expected) {
         h1.shouldBe(visible).shouldHave(exactText(expected));
     }

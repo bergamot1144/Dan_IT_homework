@@ -8,4 +8,9 @@ public class OrderPage {
     public void shouldSeeCheckoutHeader() {
         $("h1.main-h").shouldBe(visible).shouldHave(text("Оформлення замовлення"));
     }
+    public void shouldSeeOrderDescription(){
+        $(".order-i-title a")
+                .shouldHave(text("Гаррі Поттер і таємна кімната"));
+    }
+
 }

@@ -7,9 +7,10 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Issue;
 import org.testng.annotations.Test;
+
 import static com.codeborne.selenide.Selenide.sleep;
 
-public class UsePriceFilterTest extends BaseTest{
+public class UsePriceFilterTest extends BaseTest {
 
     @Test
     @Description("Checking the price filter")
