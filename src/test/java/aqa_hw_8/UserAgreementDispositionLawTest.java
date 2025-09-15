@@ -19,13 +19,13 @@ public class UserAgreementDispositionLawTest extends BaseTest {
         sleep(2000);
         login.switchToNewTab();
         UserAgreementPage agreement = new UserAgreementPage(driver);
-        String h1 = agreement.getH1();
-        Assert.assertEquals(h1, "Угода користувача", "Ожидался заголовок 'Угода користувача'.");
+        String actualArgument = agreement.getH1();
+        String expectedArgument = "\"Угода користувача\"";
+        Assert.assertEquals(actualArgument, expectedArgument, "Header expected 'Угода користувача' but we got " + actualArgument);
         agreement.clickDisposition();
-        sleep(2000);
         login.switchToNewTab();
         DispositionPage disposition = new DispositionPage(driver);
-        Assert.assertTrue(disposition.isLawParagraphVisible(), "На странице disposition нет текста 'Згідно Закону України «Про захист персональних даних»'");
-        Assert.assertTrue(disposition.isLawLinkPresent(), "На странице disposition нет ссылки на zakon.rada.gov.ua");
+        Assert.assertTrue(disposition.isLawParagraphVisible(), "On the disposition page there is no text On the Law of Ukraine On the Protection of Personal Data'");
+        Assert.assertTrue(disposition.isLawLinkPresent(), "There is no link to zakon.rada.gov.ua on the disposition page");
     }
 }

@@ -18,7 +18,7 @@ public class RegisterNameLenghtTest extends BaseTest {
         registerPage.typeName(longName);
 
         int actualLenght = registerPage.getNameLength();
-        Assert.assertTrue(actualLenght <= 30, "Факттческая длина больше 30 символов и равна = " + actualLenght);
+        Assert.assertTrue(actualLenght <= 30, "The actual length is greater than 30 characters and equal to = " + actualLenght);
 
     }
 
