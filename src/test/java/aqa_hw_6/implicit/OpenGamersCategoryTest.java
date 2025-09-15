@@ -10,26 +10,23 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class SearchTest {
+public class OpenGamersCategoryTest {
     @Test
-    public void tryToSearchIphone() {
-        String wordToFind = "iPhone";
+    public void openGamersButton() {
         WebDriver driver = new FirefoxDriver();
         try {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             driver.manage().window().maximize();
             driver.get("https://hotline.ua/");
 
-            WebElement searchField = driver.findElement(By.cssSelector("input[type='text']"));
-            searchField.sendKeys(wordToFind, Keys.ENTER);
+            WebElement goodsForGamers = driver.findElement(By.cssSelector("a.categories-section__link[href='/ua/computer/sredstva-multimedia/']"));
+            goodsForGamers.click();
 
-            WebElement searchTitle = driver.findElement(By.cssSelector("div.search__title"));
-            String actualTitleText = searchTitle.getText();
+            WebElement title = driver.findElement(
+                    By.cssSelector("h1.title-page.section-title")
+            );
+            Assert.assertTrue(title.getText().contains("Товари для геймерів"));
 
-            Assert.assertTrue(actualTitleText.contains(wordToFind));
-
-        } catch (Exception e) {
-            e.printStackTrace();
         } finally {
             driver.quit();
         }
